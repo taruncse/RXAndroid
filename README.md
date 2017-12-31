@@ -49,9 +49,16 @@ RX-Java use Observer software design pattern. Essentially, in RxJava you have **
       .observeOn(AndroidSchedulers.mainThread())
    ```
       
- * **Adding RxJava to Android Studio**
+ ### Adding RxJava to Android Studio
    ```javascript    
       dependencies {
              compile 'io.reactivex.rxjava2:rxjava:2.0.5'
        } 
    ```
+### Create an Observable
+An Observable is similar to an Iterable in that, given a sequence, it'll iterate through that sequence and emit each item, although Observables typically don't start emitting data until an Observer subscribes to them.
+
+Each time an **Observable** emits an item, it notifies its assigned **Observer** using the **onNext()** method. Once an **Observable** has transmitted all of its values, it terminates by calling either:
+
+  * **onComplete:** Called if the operation was a success.
+  * **onError:** Called if an Exception was thrown.
