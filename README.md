@@ -63,9 +63,9 @@ Each time an **Observable** emits an item, it notifies its assigned **Observer**
   * **onComplete:** Called if the operation was a success.
   * **onError:** Called if an Exception was thrown.
 
-**Observable Example**
+**Observable Example: **
 
-    ```javascript  
+  ```javascript  
        Observable<String> stringObservable
                 = Observable.just("Hello"); // This code emmits a single String "Hello"
-       ```
+   ```
