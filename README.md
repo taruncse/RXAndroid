@@ -108,5 +108,5 @@ Each time an **Observable** emits an item, it notifies its assigned **Observer**
             }
         };
    
-    stringObservable.subscribe(stringObserver); // Subscribed **Observer** in **Observable**
+    stringObservable.subscribe(stringObserver); // Subscribed **Observer** in Observable
  ```
