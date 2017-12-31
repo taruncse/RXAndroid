@@ -38,3 +38,12 @@ RX-Java use Observer software design pattern. Essentially, in RxJava you have **
     ```javascript 
        observable.subscribeOn(Schedulers.newThread());
     ```
+   Another long-standing problem with multithreading on Android is that you can only update your app's UI from the main
+   thread. Typically, whenever you need to post the results of some background work to your app's UI, you have to create a
+   dedicated Handler.But, RxJava has a much more straightforward solution.
+
+   This means that with just two lines of code, you can create a new thread and send the results of work performed on this
+   thread to Android's main UI thread:
+   ```javascript    
+      .subscribeOn(Schedulers.newThread())
+      .observeOn(AndroidSchedulers.mainThread())```
