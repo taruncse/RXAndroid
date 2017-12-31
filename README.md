@@ -64,6 +64,7 @@ Each time an **Observable** emits an item, it notifies its assigned **Observer**
   * **onError:** Called if an Exception was thrown.
 
 **Observable Example**
+
     ```javascript  
        Observable<String> stringObservable
                 = Observable.just("Hello"); // This code emmits a single String "Hello"
