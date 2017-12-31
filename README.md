@@ -73,3 +73,10 @@ Each time an **Observable** emits an item, it notifies its assigned **Observer**
        Observable<String> stringObservable
                 = Observable.just("Hello"); // This code emmits a single String "Hello"
    ```
+
+### Create an Observer:
+**Observers** are objects that you assign to an **Observable**, using the **subscribe()** operator. Once an **Observer** is subscribed to an **Observable**, it’ll react whenever its **Observer** emits one of the following:
+
+* **onNext:** The Observable has emitted a value.
+* **onError:** An error has occurred.
+* **onComplete:** The Observable has finished emitting all its values.
