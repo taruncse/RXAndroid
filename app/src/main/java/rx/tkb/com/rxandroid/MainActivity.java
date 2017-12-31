@@ -13,7 +13,7 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
 public class MainActivity extends AppCompatActivity {
-
+    String TAG = "observableJust";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +21,38 @@ public class MainActivity extends AppCompatActivity {
 
         //basicFormatUsingString();
 
-        observableJust();
+        //observableJust();
+        observableFrom();
+    }
+
+    private void observableFrom() {
+        TAG = "observableFrom";
+        // Emits each item of the array, one at a time
+        Observable<Integer> myArrayObservable = Observable.fromArray(new Integer[]{1,2,3,4,5,6});
+        Observer<Integer> myArrayObserver = new Observer<Integer>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(Integer integer) {
+                    Log.e(TAG, "onNext: " + integer);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+                Log.e(TAG, "onComplete: ");
+            }
+        };
+
+        myArrayObservable.subscribe(myArrayObserver);
+
     }
 
     private void AnotherWay() {
@@ -73,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
     // This method is to understand a basic example using a single string.
     private void observableJust() {
 
-        final String TAG = "basicFormatUsingString";
+        final String TAG = "observableJust";
 
         //Basic format of creating a Observable.
         Observable<String> stringObservable
