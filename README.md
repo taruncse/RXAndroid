@@ -116,6 +116,7 @@ Each time an **Observable** emits an item, it notifies its assigned **Observer**
  * **Observable.just()**
      You can use the **.just()** operator to convert any object into an **Observable.** The result **Observable** will then
      emit the original object and complete.
+     
      **Example:**
       See above example
 
@@ -123,11 +124,13 @@ Each time an **Observable** emits an item, it notifies its assigned **Observer**
     The **.from()** operator allows you to convert a **collection of objects** into an **observable** stream. You can
     convert an array into an Observable using **Observable.fromArray**, a Callable into an Observable using
     **Observable.fromCallable**, and an Iterable into an Observable using **Observable.fromIterable**.
+    
     **Example:**
 
  * **Observable.range()**
     You can use the **.range()** operator to emit a range of sequential integers. The first integer you provide is the
     initial value, and the second is the number of integers you want to emit.
+    
     **Example**
     ```javascript   
        Observable<Integer> observable = Observable.range(0, 5);
@@ -135,6 +138,7 @@ Each time an **Observable** emits an item, it notifies its assigned **Observer**
  * **Observable.interval()**
    This operator creates an Observable that emits an infinite sequence of ascending integers, with each emission separated
    by a time interval chosen by you.
+   
     **Example**
     ```javascript   
        Observable<Long> observable = Observable.interval(1, TimeUnit.SECONDS)
@@ -144,6 +148,7 @@ Each time an **Observable** emits an item, it notifies its assigned **Observer**
 
    The **empty()** operator creates an Observable that emits no items but terminates normally, which can be useful when you
    need to quickly create an Observable for testing purposes.
+   
     **Example**
     ```javascript   
        Observable<String> observable = Observable.empty();
