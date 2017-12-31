@@ -121,14 +121,17 @@ Each time an **Observable** emits an item, it notifies its assigned **Observer**
      **Example:**
       See above example
 
- * **Observable.from():**
+ * **Observable.fromArray():**
  
     The **.from()** operator allows you to convert a **collection of objects** into an **observable** stream. You can
     convert an array into an Observable using **Observable.fromArray**, a Callable into an Observable using
     **Observable.fromCallable**, and an Iterable into an Observable using **Observable.fromIterable**.
     
     **Example:**
-
+    ```javascript 
+      // Emits each item of the array, one at a time.
+       Observable<Integer> myArrayObservable = Observable.fromArray(new Integer[]{1,2,3,4,5,6});
+    ```
  * **Observable.range():**
  
     You can use the **.range()** operator to emit a range of sequential integers. The first integer you provide is the
