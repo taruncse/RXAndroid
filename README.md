@@ -8,3 +8,5 @@ RxJava is a library that lets you create applications in the reactive programmin
 RxJava pretty much treats everything as a stream of data—everything from variables to properties, caches, and even user input events like clicks and swipes.
 
 The data emitted by each stream can either be a value, an error, or a "completed" signal, although you don’t necessarily have to implement the last two
+
+RX-Java use Observer software design pattern. Essentially, in RxJava you have *Observable* objects that emit a stream of data and then terminate, and *Observer* objects that subscribe to Observables. An Observer receives a notification each time their assigned Observable emits a value, an error, or a completed signal.
