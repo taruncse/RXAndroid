@@ -35,6 +35,7 @@ RX-Java use Observer software design pattern. Essentially, in RxJava you have **
     work should be performed and the thread where the results of this work should be posted.
    
     Expample:
-    ```javascript var s = "observable.subscribeOn(Schedulers.newThread())";
+    ```javascript 
+       var s = "observable.subscribeOn(Schedulers.newThread())";
        alert(s);
     ```
