@@ -14,8 +14,8 @@ RX-Java use Observer software design pattern. Essentially, in RxJava you have **
 
 ### So at a very high level, RxJava is all about:
 
-  *Creating an Observable.
-  *Giving that Observable some data to emit.
-  *Creating an Observer.
-  *Assigning the Observer to an Observable.
-  *Giving the Observer tasks to perform whenever it receives an emission from its assigned Observable.
+  * Creating an Observable.
+  * Giving that Observable some data to emit.
+  * Creating an Observer.
+  * Assigning the Observer to an Observable.
+  * Giving the Observer tasks to perform whenever it receives an emission from its assigned Observable.
