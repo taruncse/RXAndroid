@@ -80,3 +80,31 @@ Each time an **Observable** emits an item, it notifies its assigned **Observer**
 * **onNext:** The Observable has emitted a value.
 * **onError:** An error has occurred.
 * **onComplete:** The Observable has finished emitting all its values.
+
+**Example:**
+ ```javascript   
+        Observer<String> stringObserver = new Observer<String>() {
+            @Override
+            public void onError(Throwable e) {
+                // Called when the observable encounters an error
+                Log.d(TAG,"onError: "+ e.getStackTrace().toString());
+            }
+
+            @Override
+            public void onComplete() {
+                // Called when the observable has no more data to emit
+                Log.d(TAG,"onComplete");
+            }
+
+            @Override
+            public void onSubscribe(Disposable d) {
+                Log.d(TAG,"onSubscribe: ");
+            }
+
+            @Override
+            public void onNext(String s) {
+                // Called each time the observable emits data
+                Log.d(TAG,"onNext: "+s);
+            }
+        };
+ ```
