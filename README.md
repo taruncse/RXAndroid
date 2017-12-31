@@ -46,4 +46,12 @@ RX-Java use Observer software design pattern. Essentially, in RxJava you have **
    thread to Android's main UI thread:
    ```javascript    
       .subscribeOn(Schedulers.newThread())
-      .observeOn(AndroidSchedulers.mainThread())```
+      .observeOn(AndroidSchedulers.mainThread())
+   ```
+      
+   * ** Adding RxJava to Android Studio
+   ```javascript    
+      dependencies {
+        compile 'io.reactivex.rxjava2:rxjava:2.0.5'
+        } 
+   ```
