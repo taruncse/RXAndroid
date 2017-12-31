@@ -28,11 +28,15 @@ RX-Java use Observer software design pattern. Essentially, in RxJava you have **
     
   * **Multithreading Made Easy**
     The problem is that Android is single-threaded by default, so if your app is ever going to multi-task successfully then
-    you'll need to create some additional threads.Android does provide a number of ways of creating additional threads, such
-    as services and IntentServices, but none of these solutions are particularly easy to implement, and they can quickly
-    result in complex, verbose code that’s prone to errors.RxJava aims to take the pain out of creating multi-threaded
-    Android apps, by providing special schedulers and operators. These give you an easy way of specifying the thread where
-    work should be performed and the thread where the results of this work should be posted.
+    you'll need to create some additional threads.
+    
+    Android does provide a number of ways of creating additional threads, such as services and IntentServices, but none of
+    these solutions are particularly easy to implement, and they can quickly result in complex, verbose code that’s prone to
+    errors.
+    
+    RxJava aims to take the pain out of creating multi-threaded Android apps, by providing special schedulers and operators.
+    These give you an easy way of specifying the thread where work should be performed and the thread where the results of
+    this work should be posted.
    
     Expample:
     ```javascript 
