@@ -107,4 +107,6 @@ Each time an **Observable** emits an item, it notifies its assigned **Observer**
                 Log.d(TAG,"onNext: "+s);
             }
         };
+   
+    stringObservable.subscribe(stringObserver); // Subscribed **Observer** in **Observable**
  ```
