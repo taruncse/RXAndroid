@@ -37,10 +37,32 @@ RX-Java use Observer software design pattern. Essentially, in RxJava you have **
     RxJava aims to take the pain out of creating multi-threaded Android apps, by providing special schedulers and operators.
     These give you an easy way of specifying the thread where work should be performed and the thread where the results of
     this work should be posted.
+
+    * **subscribeOn(Scheduler):** By default, an Observable emits its data on the thread where the subscription was
+    declared,**i.e.** where you called the **.subscribe** method. In Android, this is generally the main UI thread. You can
+    use the **subscribeOn()** operator to define a different Scheduler where the Observable should execute 
+    and emit its data.
    
-    Expample:
+    * **observeOn(Scheduler):** You can use this operator to redirect your Observable’s emissions to a different Scheduler,
+    effectively changing the thread where the Observable’s notifications are sent, and by extension the thread where its
+    data is consumed.
+    
+    RxJava comes with a number of schedulers that you can use to create different threads, including:
+
+    * **Schedulers.io():** Designed to be used for IO-related tasks.
+    * **Schedulers.computation():** Designed to be used for computational tasks. By default, the number of threads 
+        in the computation scheduler is limited to the number of CPUs available on your device.
+    * **Schedulers.newThread():** Creates a new thread.
+    
+    *Expample:*
     ```javascript 
        observable.subscribeOn(Schedulers.newThread());
+    ```
+    *Another Example:*
+   ```javascript 
+       Observable.just(1, 2, 3)
+          .subscribeOn(Schedulers.newThread())
+          .subscribe(Observer);
     ```
    Another long-standing problem with multithreading on Android is that you can only update your app's UI from the main
    thread. Typically, whenever you need to post the results of some background work to your app's UI, you have to create a
