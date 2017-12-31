@@ -22,7 +22,7 @@ RX-Java use Observer software design pattern. Essentially, in RxJava you have **
 
 
 ### Why RxJava?
-  * **More Concise, Readable Code:**
+  * **More Concise, Readable Code:** --
     RxJava simplifies the code required to handle data and events by allowing you to describe what you want to achieve, 
     rather  than writing a list of instructions for your app to work through. RxJava also provides a standard workflow 
     that you can use to handle all data and events across your application
