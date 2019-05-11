@@ -1,10 +1,8 @@
 package rx.tkb.com.rxandroid;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-
-import org.reactivestreams.Subscription;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
