@@ -1,13 +1,13 @@
 package rx.tkb.com.rxandroid.retrofit_simple.request;
 
-import com.codingwithmitch.rxjavaflatmapexample.models.Comment;
-import com.codingwithmitch.rxjavaflatmapexample.models.Post;
 
 import java.util.List;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+import rx.tkb.com.rxandroid.retrofit_simple.models.Comment;
+import rx.tkb.com.rxandroid.retrofit_simple.models.Post;
 
 public interface RequestApi {
 
