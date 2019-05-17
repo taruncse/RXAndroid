@@ -11,16 +11,15 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Function;
-import io.reactivex.functions.Predicate;
 import io.reactivex.schedulers.Schedulers;
 import rx.tkb.com.rxandroid.R;
 
 import android.os.Bundle;
 import android.util.Log;
 
+import rx.tkb.com.rxandroid.retrofit_simple.observables.ObservableProvider;
 import rx.tkb.com.rxandroid.retrofit_simple.models.Comment;
 import rx.tkb.com.rxandroid.retrofit_simple.models.Post;
-import rx.tkb.com.rxandroid.retrofit_simple.request.RequestApi;
 import rx.tkb.com.rxandroid.retrofit_simple.request.ServiceGenerator;
 
 import java.util.List;
@@ -49,12 +48,7 @@ public class RetrofitActivity extends AppCompatActivity {
 
         getPostsObservable()
                 .subscribeOn(Schedulers.io())
-                .flatMap(new Function<Post, ObservableSource<Post>>() {
-                    @Override
-                    public ObservableSource<Post> apply(Post post) throws Exception {
-                        return getCommentsObservable(post);
-                    }
-                })
+                .flatMap((Function<Post, ObservableSource<Post>>) post -> getCommentsObservable(post))
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<Post>() {
                     @Override
@@ -77,7 +71,6 @@ public class RetrofitActivity extends AppCompatActivity {
                     }
                 });
     }
-
     private Observable<Post> getPostsObservable(){
         return ServiceGenerator.getRequestApi()
                 .getPosts()
@@ -85,8 +78,6 @@ public class RetrofitActivity extends AppCompatActivity {
                 .observeOn(AndroidSchedulers.mainThread())
                 .flatMap((Function<List<Post>, ObservableSource<Post>>) posts -> {
                     adapter.setPosts(posts);
-                  //  return Observable.fromIterable(posts)
-                     //       .subscribeOn(Schedulers.io());
                     return Observable.fromIterable(posts).subscribeOn(Schedulers.io());
                 });
     }
